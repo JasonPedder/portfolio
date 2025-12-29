@@ -12,11 +12,10 @@ body {
 }
 
 section {
-    padding-top: 60px;
+    display: flex;
     height: 100vh;
-}
-
-div {
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -70,4 +69,34 @@ div {
 
 #me a:hover {
     color: #ff6f6f;
+}
+
+button {
+    background-color: rgb(211, 51, 51);
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: rgb(180, 40, 40);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
 }
