@@ -201,7 +201,7 @@ button:hover {
   width: 100%;
   position: relative;
 
-  overflow-x: auto;        /* enable horizontal scroll when needed */
+  overflow-x: auto;
   scrollbar-width: thin;
   padding-bottom: 10px;
 
@@ -247,11 +247,11 @@ button:hover {
   padding: 10px 24px 20px;
   box-sizing: border-box;
 
-  width: max-content;   /* shrink-wrap to content */
-  min-width: 100%;      /* at least viewport width */
+  width: max-content;
+  min-width: 100%;
 
-  margin: 0 auto;       /* center when content fits */
-  justify-content: center; /* center tiles by default */
+  margin: 0 auto;
+  justify-content: center;
   scroll-snap-type: x mandatory;
   scroll-padding: 0 24px;
 }
@@ -262,7 +262,7 @@ button:hover {
 
 @media (max-width: 900px) {
   .languages-row {
-    justify-content: flex-start; /* align to left for scroll */
+    justify-content: flex-start;
     overflow-x: auto;
   }
 }
