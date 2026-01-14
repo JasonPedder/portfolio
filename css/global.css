@@ -29,7 +29,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 150px;
+    padding: 0 100px;
     box-sizing: border-box;
     z-index: 1000;
 }
