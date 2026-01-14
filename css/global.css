@@ -301,6 +301,7 @@ button:hover {
   scrollbar-width: thin;
   padding-bottom: 10px;
   --tile-height: 120px;
+  margin-bottom: 30px;
 }
 
 .project-image img {

@@ -12,9 +12,11 @@ aboutBtn.addEventListener('click', () => {
   aboutSection.scrollIntoView({ behavior: 'smooth' });
 });
 
-const images = Array.from({ length: 9 }, (_, i) => `images/cougar_connect/cc_${i + 1}.JPG`);
+const ccImages = Array.from({ length: 9 }, (_, i) => `images/cougar_connect/cc_${i + 1}.JPG`);
+const cmImages = Array.from({ length: 4 }, (_, i) => `images/cougar_mail/cm_${i + 1}.JPG`);
 
 let currentIndex = 0;
+let activeImages = [];
 
 const modal = document.getElementById("gallery-modal");
 const modalImg = document.getElementById("gallery-image");
@@ -22,14 +24,21 @@ const closeBtn = document.querySelector(".gallery-close");
 const leftArrow = document.querySelector(".gallery-arrow.left");
 const rightArrow = document.querySelector(".gallery-arrow.right");
 
-document.querySelector(".gallery-trigger").addEventListener("click", () => {
+document.querySelector(".gallery-trigger-cc").addEventListener("click", () => {
   currentIndex = 0;
+  activeImages = ccImages;
+  openGallery();
+});
+
+document.querySelector(".gallery-trigger-cm").addEventListener("click", () => {
+  currentIndex = 0;
+  activeImages = cmImages;
   openGallery();
 });
 
 function openGallery() {
   modal.classList.remove("hidden");
-  modalImg.src = images[currentIndex];
+  modalImg.src = activeImages[currentIndex];
 }
 
 function closeGallery() {
@@ -37,13 +46,15 @@ function closeGallery() {
 }
 
 function showNext() {
-  currentIndex = (currentIndex + 1) % images.length;
-  modalImg.src = images[currentIndex];
+  if (!activeImages.length) return;
+  currentIndex = (currentIndex + 1) % activeImages.length;
+  modalImg.src = activeImages[currentIndex];
 }
 
 function showPrev() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  modalImg.src = images[currentIndex];
+  if (!activeImages.length) return;
+  currentIndex = (currentIndex - 1 + activeImages.length) % activeImages.length;
+  modalImg.src = activeImages[currentIndex];
 }
 
 closeBtn.onclick = closeGallery;
